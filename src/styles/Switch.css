@@ -1,0 +1,61 @@
+
+.switch-container {
+    width: 100%;
+    padding: .5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.switch {
+    background-color: rgba(255, 255, 255, .25);
+    width: 96px;
+    height: 32px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    outline: white solid 1px;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px #ffffff55;
+}
+
+.switch--entrada {
+    transform: translateX(10%);
+    background-color: #55ff55;
+    transition: .2s ease-in-out;
+}
+
+.switch--saida {
+    transform: translateX(110%);
+    transition: .2s ease-in-out;
+    background-color: #ff5555;
+}
+
+.switch-key {
+    width: 44px;
+    height: 24px;
+    position: absolute;
+    border-radius: 4px;
+    top: 4px;
+}
+
+.label {
+    font-size: 1.5rem;
+    width: 6rem;
+    text-align: center;
+    opacity: 0;
+    font-weight: 500;
+    transition: .2s ease-in-out;
+}
+
+.label--entrada {
+    opacity: 1;
+    transition: .1s .1s ease-in-out;
+}
+
+.label--saida {
+    opacity: 1;
+    transition: .1s .1s ease-in-out;
+}
