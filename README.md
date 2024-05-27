@@ -23,4 +23,8 @@ O projeto é a evolução de uma planilha de gastos feita em Excel, que se torna
 * Clean Code
 * Boas práticas de versionamento Git
 ________________________________________
-    O resultado esperado é uma aplicação web completa, que resolva uma dor minha e de outras pessoas. Um case de sucesso, um projeto para o Portfólio e um desafio cheio de obstáculos para superar na minha transição de carreira.
+    O resultado esperado é uma aplicação web completa,
+    que resolva uma dor minha e de outras pessoas. 
+    Um case de sucesso, um projeto para o Portfólio 
+    e um desafio cheio de obstáculos para superar na 
+    minha transição de carreira.
