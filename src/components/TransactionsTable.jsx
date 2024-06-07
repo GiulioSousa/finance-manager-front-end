@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TransactionItem from './TransactionItem';
+import Loading from './Loading'
 
 const TransactionsTable = () => {
 
@@ -28,7 +29,7 @@ const TransactionsTable = () => {
 
 
     if (load) {
-        return <div>Carregando</div>
+        return <Loading />
     }
     
     if (error) {
