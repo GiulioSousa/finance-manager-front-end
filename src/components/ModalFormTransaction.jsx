@@ -19,6 +19,9 @@ const ModalFormTransaction = () => {
         account: ''
     })
 
+    const categorys = ['ALIMENTAÇÃO', 'TRANSPORTE', 'EMPRÉSTIMO', 'OUTROS'];
+    const accounts = ['ESPÉCIE', 'NUBANK', 'C6 DÉBITO', 'C6 INVEST']
+
     const handleClose = () => setShow(false);
     const handleShow = () => {
         setInOutTransaction(true)
@@ -99,7 +102,6 @@ const ModalFormTransaction = () => {
                                 type="number"
                                 name="price"
                                 onChange={handleChangeFormInput}
-
                             />
                         </Form.Group>
                         <Form.Group
@@ -112,9 +114,7 @@ const ModalFormTransaction = () => {
                                 name="category"
                                 onChange={handleChangeFormInput}>
                                 <option>Selecione uma categoria</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                {categorys.map((category, i) => <option key={i} value={category}>{category}</option>)}
                             </Form.Select>
                         </Form.Group>
                         <Form.Group
@@ -127,10 +127,7 @@ const ModalFormTransaction = () => {
                                 name="account"
                                 onChange={handleChangeFormInput}>
                                 <option>Selecione uma conta de destino</option>
-                                <option value="1">Nubank</option>
-                                <option value="2">C6 Débito</option>
-                                <option value="3">C6 Crédito</option>
-                                <option value="4">C6 Invest</option>
+                                {accounts.map((account, i) => <option key={i} value={account}>{account}</option>)}
                             </Form.Select>
                         </Form.Group>
                         <Form.Group
@@ -143,7 +140,7 @@ const ModalFormTransaction = () => {
                                 type="radio"
                                 id="pending"
                                 label="Pendente"
-                                defaultChecked
+                                value="PENDENTE"
                                 onChange={handleChangeFormInput}
                             />
                             <Form.Check
@@ -151,6 +148,7 @@ const ModalFormTransaction = () => {
                                 type="radio"
                                 id="paid"
                                 label="Pago"
+                                value="PAGO"
                                 onChange={handleChangeFormInput}
                             />
                         </Form.Group>
