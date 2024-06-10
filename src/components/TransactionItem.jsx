@@ -7,7 +7,7 @@ const TransactionItem = ({ item }) => {
                 <td>{item.description}</td>
                 <td>R$ {item.price}</td>
                 <td>{item.category}</td>
-                <td>{item.status ? 'PAGO' : ''}</td>
+                <td>{item.status}</td>
                 <td>{item.account}</td>
             </tr>
         </>
