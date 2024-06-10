@@ -15,7 +15,7 @@ const ModalFormTransaction = () => {
         description: '',
         price: '',
         category: '',
-        status: true,
+        status: 'PENDENTE',
         account: ''
     })
 
@@ -40,12 +40,30 @@ const ModalFormTransaction = () => {
 
     const handleChangeFormInput = event => {
         const { name, value } = event.target;
-        console.log(name, value);
         setFormData({ ...formData, [name]: value })
     };
 
-    const handleSubmit = () => {
-        console.log(formData)
+    const handleSubmit = async () => {
+
+        try {
+            const response = await fetch('http://localhost:5500/create-transaction', {
+                method: 'POST',
+                headers: {
+                    'content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (!response.ok) {
+                throw new Error('Sem resposta da rede');
+            }
+
+            const result = await response.json();
+            console.log('Sucesso:', result);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+        // console.log(formData)
         setFormData({});
         handleClose();
     }
@@ -141,6 +159,7 @@ const ModalFormTransaction = () => {
                                 id="pending"
                                 label="Pendente"
                                 value="PENDENTE"
+                                defaultChecked
                                 onChange={handleChangeFormInput}
                             />
                             <Form.Check
