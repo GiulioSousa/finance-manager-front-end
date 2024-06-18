@@ -1,11 +1,13 @@
 import './App.css';
 import './styles/Modal.css'
 import './styles/Switch.css';
+import './styles/CardBalances.css'
 
 import React, { useState, useEffect } from 'react';
 import TransactionsTable from './components/TransactionsTable';
 import ModalFormTransaction from './components/ModalFormTransaction';
 import Loading from './components/Loading'
+import { CardBalances } from './components/CardBalances';
 
 const App = () => {
 
@@ -97,7 +99,6 @@ const App = () => {
         fetchData();
     }, [])
 
-
     if (load) {
         return <Loading />
     }
@@ -108,6 +109,7 @@ const App = () => {
 
     return (
         <div className="App container--fluid">
+            <CardBalances/>
             <ModalFormTransaction
                 onShowModalForm={showModalForm}
                 onHandleShowModalForm={handleShowModalForm}
