@@ -95,9 +95,20 @@ const App = () => {
         }
     };
 
+    //INICIALIZAÇÃO CardBalance
     useEffect(() => {
         fetchData();
     }, [])
+
+    const handleTotalValue = account => {
+        const finalValue = apiData
+            .filter(transaction => 
+                transaction.account === account && 
+                transaction.status === 'PAGO'
+            )
+            .reduce((sum, obj) => sum + obj.price, 0)
+        return finalValue
+    }
 
     if (load) {
         return <Loading />
@@ -109,7 +120,16 @@ const App = () => {
 
     return (
         <div className="App container--fluid">
-            <CardBalances/>
+            <div className='balances'>
+                {accounts.map((account, key) => {
+                    return <CardBalances
+                        key={key}
+                        account={account}
+                        totalValue={handleTotalValue(account)}
+                    />
+                })}
+            </div>
+
             <ModalFormTransaction
                 onShowModalForm={showModalForm}
                 onHandleShowModalForm={handleShowModalForm}
