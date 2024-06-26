@@ -44,7 +44,8 @@ table {
 }
 
 td,
-th {
+th,
+tr {
     padding: .5em;
     text-align: center;
     border: 1px solid #8FC8EB;

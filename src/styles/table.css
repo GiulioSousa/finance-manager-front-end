@@ -1,0 +1,15 @@
+.item-options {
+    display: none;
+}
+
+tr:hover .item-options {
+    display: flex;
+    gap: .25rem;
+    position: absolute;
+    border: none;
+    padding-left: 2rem;
+}
+
+.btn-edit-delete {
+    cursor: pointer;
+}
