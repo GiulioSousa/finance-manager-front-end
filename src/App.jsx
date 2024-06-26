@@ -2,6 +2,7 @@ import './App.css';
 import './styles/Modal.css'
 import './styles/Switch.css';
 import './styles/CardBalances.css'
+import './styles/table.css'
 
 import React, { useState, useEffect } from 'react';
 import TransactionsTable from './components/TransactionsTable';
@@ -107,7 +108,11 @@ const App = () => {
                 transaction.status === 'PAGO'
             )
             .reduce((sum, obj) => sum + obj.price, 0)
-        return finalValue
+        const finalValueToString = finalValue
+            .toFixed(2)
+            .toString()
+            .replace('.', ',')
+        return finalValueToString
     }
 
     if (load) {

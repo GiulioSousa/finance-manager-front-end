@@ -1,3 +1,6 @@
+import { MdEdit  } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
+
 const TransactionItem = ({ item }) => {
 
     const formatDate = dateString => {
@@ -21,6 +24,18 @@ const TransactionItem = ({ item }) => {
                 <td>{item.category}</td>
                 <td>{item.status}</td>
                 <td>{item.account}</td>
+                <td className="item-options">
+                    <MdEdit 
+                        className="btn-edit-delete btn-edit" 
+                        color="#8FC8EB" 
+                        size={28} 
+                    />
+                    <MdDelete 
+                        className="btn-edit-delete btn-delete" 
+                        color="#8FC8EB" 
+                        size={28} 
+                    />
+                </td>
             </tr>
         </>
     )
